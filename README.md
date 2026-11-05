@@ -25,14 +25,9 @@ GitHub Pages has no templating, so if the site moves to a custom domain, replace
 
 Search with `grep -rn "earbop.github.io" .`. When a custom domain is added to the same Pages site, GitHub redirects the old `github.io` addresses to it.
 
-## Before the first publish
+## Editing the policy
 
-The privacy policy has two placeholders, shown highlighted on the page, to replace in `privacy/index.html`:
-
-- `[DATE OF PUBLICATION]`: the day the policy goes live.
-- `[SENTRY RETENTION PERIOD]`: check Sentry (Settings, then Subscription or Data Management) for the event retention.
-
-`grep -rn "\[DATE OF PUBLICATION\]\|\[SENTRY RETENTION" .` must return nothing before publishing.
+Last updated 5 November 2026. When the policy changes, update the date at the top of `privacy/index.html`, and update the Google Play Data safety and App Store privacy answers to match. Crash reports are kept 90 days (Sentry's event retention setting); change the policy if that setting changes.
 
 ## Publishing
 
