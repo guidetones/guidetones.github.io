@@ -1,0 +1,105 @@
+/* Earbop site. One stylesheet, system fonts, no third-party requests. */
+:root {
+  color-scheme: dark light;
+  --bg: #120f24;
+  --surface: #1c1836;
+  --text: #ede9f7;
+  --muted: #b5afcb;
+  --accent: #f0578e;
+  --rule: #342e55;
+  --mark-bg: #4a3a12;
+  --mark-text: #ffe9a8;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f2fb;
+    --text: #1b1630;
+    --muted: #5b5473;
+    --accent: #c42b6a;
+    --rule: #ddd6ee;
+    --mark-bg: #fff0b8;
+    --mark-text: #4a3500;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+.skip:focus { left: 0; }
+
+header, main, footer {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+header { padding-top: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--rule); }
+.brand { font-size: 1.25rem; font-weight: 800; letter-spacing: 0.01em; color: var(--text); text-decoration: none; }
+.brand:hover { color: var(--accent); }
+
+main { flex: 1; padding-top: 2rem; padding-bottom: 3rem; }
+
+h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 0.5rem; }
+h2 { font-size: 1.3rem; line-height: 1.3; margin: 2.25rem 0 0.5rem; }
+p, ul { margin: 0.75rem 0; }
+ul { padding-left: 1.4rem; }
+li { margin: 0.35rem 0; }
+
+a { color: var(--accent); text-underline-offset: 0.15em; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, .skip:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.lead { font-size: 1.15rem; color: var(--text); }
+.meta { color: var(--muted); }
+.note {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 0.75rem;
+  padding: 0.25rem 1rem;
+}
+
+/* A placeholder that must be filled in before the page goes live. */
+mark {
+  background: var(--mark-bg);
+  color: var(--mark-text);
+  padding: 0.05em 0.3em;
+  border-radius: 0.25em;
+}
+
+footer {
+  padding-top: 1.25rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+}
+footer nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-bottom: 0.5rem; }
+footer p { margin: 0; }
