@@ -1,6 +1,6 @@
-# Earbop website
+# Guide Tones website
 
-Static site for Earbop: Jazz Ear Training, served by GitHub Pages at <https://earbop.github.io/>.
+Static site for Guide Tones: Jazz Ear Training, served by GitHub Pages at <https://guidetones.github.io/> (the repo is `guidetones/guidetones.github.io`, so Pages serves it at the organisation's address). There is no custom domain.
 Its first job is the privacy policy at a permanent URL for the Google Play Console and App Store Connect.
 
 Plain HTML and one CSS file. No build step, no JavaScript, no third-party requests, no cookies, no inline styles (the
@@ -17,7 +17,7 @@ CSP `<meta>` tag blocks them, so every style lives in `css/site.css`).
 | `/privacy-policy/` | `privacy-policy/index.html` (redirects to `/privacy/`) |
 | not found | `404.html` |
 
-Images are in `img/` (self-hosted WebP screenshots, and `og-feature.png` for link previews). Icons are in `assets/`.
+Images are in `img/` (self-hosted WebP screenshots). There is no `og:image` yet: add one, and `og-feature.png` for link previews, once the Play feature graphic is rebuilt with the new name, and switch `twitter:card` back to `summary_large_image`. Icons are in `assets/`.
 
 ## Navigation and footer lists
 
@@ -39,15 +39,15 @@ replace across the six HTML files. The lists:
 
 ## The base URL lives in these places
 
-GitHub Pages has no templating, so if the site moves to a custom domain, replace `https://earbop.github.io` in:
+GitHub Pages has no templating, so if the site moves again, replace `https://guidetones.github.io` in:
 
-- the `<link rel="canonical">`, `og:url` and `og:image` tags in every page (not the 404, which has none)
+- the `<link rel="canonical">` and `og:url` tags in every page (not the 404, which has none)
 - `robots.txt` and `sitemap.xml`
 - the app's `PRIVACY_POLICY_URL` / `SUPPORT_URL` constants (`constants/links.ts`; needs an app update)
 - the store listings
 
-Search with `grep -rn "earbop.github.io" .`. When a custom domain is added to the same Pages site, GitHub redirects the
-old `github.io` addresses to it.
+Search with `grep -rn "guidetones.github.io" .`. Renaming the GitHub organisation or this repo breaks the old Pages
+address with no redirect, and any app build that links to it, so never do either once a build is in use.
 
 ## Editing the policy
 
