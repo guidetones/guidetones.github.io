@@ -359,12 +359,12 @@ mark {
 .stage {
   position: relative;
   overflow: hidden;
-  height: 340px;
+  height: 300px;
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: 28px;
 }
-@media (min-width: 720px) { .stage { height: 600px; border-radius: 40px; } }
+@media (min-width: 720px) { .stage { height: 480px; border-radius: 40px; } }
 .stage::before {
   content: "";
   position: absolute;
@@ -378,23 +378,25 @@ mark {
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   gap: 3%;
   padding: 0 4%;
 }
 .shot {
+  height: auto;
   width: 29.5%;
   max-width: 220px;
   border: 2px solid var(--border);
   border-radius: 16px;
 }
 @media (min-width: 720px) { .shot { border-radius: 26px; } }
-.shot:nth-child(1) { margin-top: 28px; }
-.shot:nth-child(2) { margin-top: 54px; }
-.shot:nth-child(3) { margin-top: 80px; }
+.shot:nth-child(1) { margin-top: 24px; }
+.shot:nth-child(2) { margin-top: 48px; }
+.shot:nth-child(3) { margin-top: 72px; }
 @media (min-width: 720px) {
-  .shot:nth-child(1) { margin-top: 110px; }
-  .shot:nth-child(2) { margin-top: 190px; }
-  .shot:nth-child(3) { margin-top: 270px; }
+  .shot:nth-child(1) { margin-top: 50px; }
+  .shot:nth-child(2) { margin-top: 110px; }
+  .shot:nth-child(3) { margin-top: 170px; }
 }
 
 /* ---------- Home: chord strip ---------- */
