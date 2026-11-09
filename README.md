@@ -1,6 +1,6 @@
 # Guide Tones website
 
-Static site for Guide Tones: Jazz Ear Training, served by GitHub Pages at <https://guidetones.github.io/> (the repo is `guidetones/guidetones.github.io`, so Pages serves it at the organisation's address). There is no custom domain.
+Static site for Guide Tones: Jazz Ear Training, served by GitHub Pages at <https://guidetones.app/> (custom domain, set by the `CNAME` file; `getguidetones.com` forwards to it at the registrar). The repo is `guidetones/guidetones.github.io`, and `guidetones.github.io` redirects to the custom domain.
 Its first job is the privacy policy at a permanent URL for the Google Play Console and App Store Connect.
 
 Plain HTML and one CSS file. No build step, no JavaScript, no third-party requests, no cookies, no inline styles (the
@@ -39,15 +39,16 @@ replace across the six HTML files. The lists:
 
 ## The base URL lives in these places
 
-GitHub Pages has no templating, so if the site moves again, replace `https://guidetones.github.io` in:
+GitHub Pages has no templating, so if the site moves again, replace `https://guidetones.app` in:
 
 - the `<link rel="canonical">` and `og:url` tags in every page (not the 404, which has none)
-- `robots.txt` and `sitemap.xml`
+- `robots.txt`, `sitemap.xml` and the `CNAME` file
 - the app's `PRIVACY_POLICY_URL` / `SUPPORT_URL` constants (`constants/links.ts`; needs an app update)
 - the store listings
 
-Search with `grep -rn "guidetones.github.io" .`. Renaming the GitHub organisation or this repo breaks the old Pages
-address with no redirect, and any app build that links to it, so never do either once a build is in use.
+Search with `grep -rn "guidetones.app" .`. `.app` domains are HTTPS-only, so keep "Enforce HTTPS" ticked in Settings,
+Pages. Renaming the GitHub organisation or this repo breaks the `github.io` address (the custom domain keeps working),
+and any app build that links to it, so don't once a build is in use.
 
 ## Editing the policy
 
