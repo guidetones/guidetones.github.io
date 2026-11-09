@@ -127,6 +127,7 @@ mark {
   text-decoration: none;
 }
 .brand:hover { color: var(--pink); }
+.brand-mark { display: block; flex: none; width: 40px; height: 40px; border-radius: 9px; box-shadow: 0 0 0 2px var(--border); }
 
 .nav-desktop { display: none; align-items: center; gap: 32px; }
 .nav-desktop a {
